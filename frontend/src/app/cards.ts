@@ -1,6 +1,13 @@
 export interface cardInert {
     _id: string;
-    titele: string;
+    title: string;
     description: string;
-    image: string;
+    imageUrl: string;
+
+
+
+
+
+
+    
 }
