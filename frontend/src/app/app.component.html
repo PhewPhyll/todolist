@@ -1,50 +1,69 @@
 <div cdkDropListGroup>
-    <div class="example-container">
-        <h2>Planing</h2>
-    
-        <div
-          cdkDropList
-          [cdkDropListData]="planing"
-          class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <ul class="cards">
-            <div *ngFor="let card of cards" cdkDrag>
-              <div class="card-container">
-                  <button
-                  class="card card-small"
-                  [class.selected]="card === selectedCard"
-                  (click)="onSelect(card)"  
-                  >
-                  <span>{{ card.title }}</span>
-                </button>
-              </div>
-            </div>
-          </ul>
-        </div>
-      </div>
+  <div class="example-container">
+    <h2>Planing</h2>
 
-    <div class="example-container">
-      <h2>To do</h2>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="todo"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-      </div>
-    </div>
-  
-    <div class="example-container">
-      <h2>Done</h2>
-  
-      <div
-        cdkDropList
-        [cdkDropListData]="done"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-      </div>
+    <div
+      cdkDropList
+      [cdkDropListData]="planing"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ul class="cards">
+        <div *ngFor="let card of cards" cdkDrag>
+          <div class="card-container">
+            <button
+              class="card card-small"
+              [class.selected]="card === selectedCard"
+              (click)="onSelect(card)"
+              (click)="openDialog()"
+            >
+              <span>{{ card.title }}</span>
+            </button>
+          </div>
+        </div>
+      </ul>
     </div>
   </div>
- 
+
+  <div class="example-container">
+    <h2>To do</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ul class="cards">
+        <div *ngFor="let card of todo" cdkDrag>
+          <div class="card-container">
+            <button class="card card-small" (click)="openDialog()">
+              <span>{{ card }}</span>
+            </button>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Done</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <ul class="cards">
+        <div *ngFor="let card of done" cdkDrag>
+          <div class="card-container">
+            <button class="card card-small" (click)="openDialog()">
+              <span>{{ card }}</span>
+            </button>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

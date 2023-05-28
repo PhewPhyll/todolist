@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ViewCardComponent } from './view-card/view-card.component';
 // test
 
 
@@ -24,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     BoardComponent,
     CreateCardComponent,
     CreateDialogComponent,
+    ViewCardComponent,
   ],
   imports: [
     BrowserModule,
