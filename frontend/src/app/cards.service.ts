@@ -12,22 +12,33 @@ import { Title } from '@angular/platform-browser';
 
 export class CardsService {
 
-  private boardUrl = 'http://localhost:3000/api/board';  // URL to web api
+  constructor(private http: HttpClient) {}
+  private cardsUrl = 'http://localhost:3000/api/card';
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
-  // all
-  getPlaing(): Observable<cardInsert[]> {
-    return this.http.get<cardInsert[]>(`${this.boardUrl}`)
+  getCards(): Observable<cardInsert[]> {
+    return this.http.get<cardInsert[]>(this.cardsUrl);
   }
-  // id
-  getPlaingId(_id:string): Observable<cardInsert[]> {
-    return this.http.get<cardInsert[]>(`${this.boardUrl}/${_id}`)
+
+  getCard(_id: string): Observable<cardInsert> {
+    const url = `${this.cardsUrl}/${_id}`;
+    return this.http.get<cardInsert>(url);
   }
-  // title
-  getPlaningTitle(title:string): Observable<cardInsert[]> {
-    return this.http.get<cardInsert[]>(`${this.boardUrl}/${title}`)
+
+  updataCard(card: cardInsert): Observable<any> {
+    return this.http.put(this.cardsUrl, card, this.httpOptions);
+  }
+
+  addCard(card: cardInsert): Observable<cardInsert> {
+    return this.http.post<cardInsert>(this.cardsUrl, card, this.httpOptions);
+  }
+
+  deleteCard(_id:string):Observable<cardInsert>{
+    const url = `${this.cardsUrl}/${_id}`
+
+    return this.http.delete<cardInsert>(url,this.httpOptions)
   }
 }

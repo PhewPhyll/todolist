@@ -10,6 +10,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardComponent } from './board/board.component';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
+import { CreateCardComponent } from './create-card/create-card.component';
+import { CreateDialogComponent } from './create-dialog/create-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 // test
 
 
@@ -17,6 +24,8 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
   declarations: [
     AppComponent,
     BoardComponent,
+    CreateCardComponent,
+    CreateDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +34,11 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
     DragDropModule,
     BrowserAnimationsModule,
     FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
