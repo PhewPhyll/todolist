@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardComponent } from './board/board.component';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 // test
 
@@ -23,6 +24,7 @@ import { BoardComponent } from './board/board.component';
     HttpClientModule,
     DragDropModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

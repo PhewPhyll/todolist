@@ -1,1 +1,35 @@
-<p>board works!</p>
+
+    <div class="container">
+        <div class="card">
+        
+                <div>
+                    <label for="title" class="title">Title</label>
+                    <input type="text" value="" id="title">
+                </div>
+
+                <div>
+                    <label for="Description" class="title">Description</label>
+                    <input type="text" value="" id="description">
+                </div>
+                    
+                <div>
+                    <label for="Image" class="title">Image</label>
+                    <input type="text" [(ngModel)]="imageUrl" id="image">
+                    
+                <div *ngIf="imageUrl !== ''">
+                        <!-- {{imageUrl}} -->
+                        <img src="{{imageUrl}}" alt="" width="95%" height="95%">
+                </div>   
+                    
+                </div>
+
+                <div>
+                    <button type="submit">Create</button>
+                </div>  
+
+            
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="actionMethod($event)">Add</button>
+

@@ -1,0 +1,66 @@
+/* .container{
+    
+    
+} */
+.card {
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+  }
+  
+  .title {
+    color: black;
+    font-size: 18px;
+
+  }
+  
+  button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    border-bottom-left-radius: 10px ;
+    border-bottom-right-radius: 10px ;
+  }
+  
+  a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+  }
+  
+  button:hover, a:hover {
+    opacity: 0.7;
+  }
+
+  button.create#create{
+    font-size: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50rem;
+  }
+
+  /*  */
+  :host {
+    display: block;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 16px 16px;
+  }
+  
+  input {
+    margin: 8px 0;
+  }
+  
+  button + button {
+    margin-left: 8px;
+  }
