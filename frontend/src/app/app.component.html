@@ -7,7 +7,19 @@
           [cdkDropListData]="planing"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+          <ul class="cards">
+            <div *ngFor="let card of cards" cdkDrag>
+              <div class="card-container">
+                  <button
+                  class="card card-small"
+                  [class.selected]="card === selectedCard"
+                  (click)="onSelect(card)"  
+                  >
+                  <span>{{ card.title }}</span>
+                </button>
+              </div>
+            </div>
+          </ul>
         </div>
       </div>
 
@@ -35,3 +47,4 @@
       </div>
     </div>
   </div>
+ 
